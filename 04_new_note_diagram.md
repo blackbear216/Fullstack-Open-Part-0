@@ -3,9 +3,9 @@ sequenceDiagram
     participant browser
     participant server
 
-    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    browser->>server: POST [{ "content": "example post", "date": "2023-1-1" }, ... ]
     activate server
-    server-->>browser: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+    server-->>browser: GET https://studies.cs.helsinki.fi/exampleapp/notes
     deactivate server
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
